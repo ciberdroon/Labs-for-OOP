@@ -1,1 +1,1 @@
-# Labs-for-OOP
+# Labs for OOP
