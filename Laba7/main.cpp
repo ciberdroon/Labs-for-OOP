@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Matrix { //comment
+class Matrix {
 public:
     static const int length = 3;
     int mat[length][length];
@@ -24,45 +24,34 @@ public:
             }
         }
     }
+};
 
     template<typename T>
     void Logic(T matrA) {
-        int i, j, n = 3;
-
-        matrA = new int *[n];
-        for (i = 0; i < n; i++) {
-            matrA[i] = new int[n];
-        }
-
+        int i, j;
         T matrB;
-        for (i = 0; i < n; i++) {
-            matrB[i] = new int[n];
-        }
-
-
         printf("Enter elements matrix\n");
-        for (i = 0; i < 3; i++)
-            for (j = 0; j < 3; j++) {
-                scanf("%d", &matrA[i][j]);
-
+        for (i = 0; i < matrA.length; i++)
+            for (j = 0; j < matrA.length; j++) {
+                scanf("%d", matrA.mat[i][j]);
             }
 
         printf("Matrix\n");
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++)
-                printf("%d ", matrA[i][j]);
+        for (i = 0; i < matrA.length; i++) {
+            for (j = 0; j < matrA.length; j++)
+                printf("%d ", matrA.mat[i][j]);
             printf("\n");
         }
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++)
-                matrB[i][j] = matrA[j][i];
+        for (i = 0; i < matrA.length; i++) {
+            for (j = 0; j < matrA.length; j++)
+                matrB.mat[i][j] = matrA.mat[j][i];
         }
 
         printf("Transpore massiv\n");
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++)
-                printf("%d ", matrB[i][j]);
+        for (i = 0; i < matrB.length; i++) {
+            for (j = 0; j < matrB.length; j++)
+                printf("%d ", matrB.mat[i][j]);
             printf("\n");
         }
 
@@ -70,16 +59,16 @@ public:
         printf("\n");
 
 
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 3; j++)
-                printf("%d ", matrA[i][j]);
+        for (i = 0; i < matrA.length; i++) {
+            for (j = 0; j < matrA.length; j++)
+                printf("%d ", matrA.mat[i][j]);
             printf("\n");
         }
 
         int flag = 0;
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < n; j++) {
-                if (i != n && matrA[i][j] != matrB[i][j])
+        for (i = 0; i < matrA.length; i++) {
+            for (j = 0; j < matrA.length; j++) {
+                if (i != matrA.length && matrA.mat[i][j] != matrB.mat[i][j])
                     flag = 1;
             }
         }
@@ -89,5 +78,8 @@ public:
         else
             printf("Matrix is symmetrical");
     }
-};
+
+    int main(){
+        Logic();
+    }
 
