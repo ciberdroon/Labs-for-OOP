@@ -5,7 +5,7 @@ using namespace std;
 
 class Matrix {
 public:
-    static const int length = 3;
+    static const int length = 5;
     int mat[length][length];
 
     Matrix() {
@@ -33,7 +33,8 @@ void Logic(T matrA) {
     cout << ("Matrix\n");
     for (i = 0; i < matrA.length; i++) {
         for (j = 0; j < matrA.length; j++)
-            cout << matrA.mat[i][j] << endl;
+            cout << matrA.mat[i][j] << " ";
+        cout << endl;
     }
     for (i = 0; i < matrA.length; i++) {
         for (j = 0; j < matrA.length; j++)
@@ -42,7 +43,8 @@ void Logic(T matrA) {
     cout << ("Transpore matrix\n");
     for (i = 0; i < matrB.length; i++) {
         for (j = 0; j < matrB.length; j++)
-            cout << matrB.mat[i][j] << endl;
+            cout << matrB.mat[i][j] << " ";
+        cout << endl;
     }
     int flag = 0;
     for (i = 0; i < matrA.length; i++) {
@@ -58,7 +60,7 @@ void Logic(T matrA) {
 }
 
 int main() {
-    Matrix matr; //obj
+    Matrix matr;
     Logic(matr);
 }
 
