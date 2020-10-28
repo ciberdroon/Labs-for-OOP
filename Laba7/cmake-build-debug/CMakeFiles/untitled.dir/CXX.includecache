@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Rasery/Documents/GitHub/Labs-for-OOP/Laba7/main.cpp
-stdio.h
-C:/Users/Rasery/Documents/GitHub/Labs-for-OOP/Laba7/stdio.h
+/Users/ciberdroon/Documents/GitHub/Labs-for-OOP/Laba7/main.cpp
 iostream
 -
 time.h

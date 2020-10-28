@@ -26,61 +26,39 @@ public:
     }
 };
 
-    template<typename T>
-    void Logic(T matrA) {
-        int i, j;
-        T matrB;
-        printf("Enter elements matrix\n");
-        for (i = 0; i < matrA.length; i++)
-            for (j = 0; j < matrA.length; j++) {
-                scanf("%d", matrA.mat[i][j]);
-            }
-
-        printf("Matrix\n");
-        for (i = 0; i < matrA.length; i++) {
-            for (j = 0; j < matrA.length; j++)
-                printf("%d ", matrA.mat[i][j]);
-            printf("\n");
-        }
-
-        for (i = 0; i < matrA.length; i++) {
-            for (j = 0; j < matrA.length; j++)
-                matrB.mat[i][j] = matrA.mat[j][i];
-        }
-
-        printf("Transpore massiv\n");
-        for (i = 0; i < matrB.length; i++) {
-            for (j = 0; j < matrB.length; j++)
-                printf("%d ", matrB.mat[i][j]);
-            printf("\n");
-        }
-
-        printf("\n");
-        printf("\n");
-
-
-        for (i = 0; i < matrA.length; i++) {
-            for (j = 0; j < matrA.length; j++)
-                printf("%d ", matrA.mat[i][j]);
-            printf("\n");
-        }
-
-        int flag = 0;
-        for (i = 0; i < matrA.length; i++) {
-            for (j = 0; j < matrA.length; j++) {
-                if (i != matrA.length && matrA.mat[i][j] != matrB.mat[i][j])
-                    flag = 1;
-            }
-        }
-
-        if (flag == 1)
-            printf("Matrix is not symmetrical");
-        else
-            printf("Matrix is symmetrical");
+template<typename T>
+void Logic(T matrA) {
+    int i, j;
+    T matrB;
+    cout << ("Matrix\n");
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++)
+            cout << matrA.mat[i][j] << endl;
     }
-
-    int main(){
-        Matrix matr; //obj
-        Logic(matr);
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++)
+            matrB.mat[i][j] = matrA.mat[j][i];
     }
+    cout << ("Transpore matrix\n");
+    for (i = 0; i < matrB.length; i++) {
+        for (j = 0; j < matrB.length; j++)
+            cout << matrB.mat[i][j] << endl;
+    }
+    int flag = 0;
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++) {
+            if (i != matrA.length && matrA.mat[i][j] != matrB.mat[i][j])
+                flag = 1;
+        }
+    }
+    if (flag == 1)
+        cout << ("Matrix is not symmetrical");
+    else
+        cout << ("Matrix is symmetrical");
+}
+
+int main() {
+    Matrix matr; //obj
+    Logic(matr);
+}
 
