@@ -1,5 +1,6 @@
 #include "stdio.h"
-#include "iostream"
+#include <iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -17,10 +18,10 @@ public:
         }
     }
 
-    void print(Matrix mat) {
+    void print(Matrix matr) {
         for (int i = 0; i < length; ++i) {
             for (int j = 0; j < length; ++j) {
-                cout << mat.mat[i][j] << endl;
+                cout << matr.mat[i][j] << endl;
             }
         }
     }
@@ -80,6 +81,7 @@ public:
     }
 
     int main(){
-        Logic();
+        Matrix matr;
+        Logic(matr);
     }
 
