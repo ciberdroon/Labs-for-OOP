@@ -81,7 +81,7 @@ public:
     }
 
     int main(){
-        Matrix matr;
+        Matrix matr; //obj
         Logic(matr);
     }
 
