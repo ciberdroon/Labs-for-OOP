@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/ciberdroon/CLionProjects/Laba7/main.cpp
-stdio.h
-/Users/ciberdroon/CLionProjects/Laba7/stdio.h
+/Users/ciberdroon/Documents/GitHub/Labs-for-OOP/Laba7/main.cpp
 iostream
-/Users/ciberdroon/CLionProjects/Laba7/iostream
+-
+time.h
+-
 

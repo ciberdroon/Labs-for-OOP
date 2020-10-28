@@ -1,11 +1,11 @@
-#include "stdio.h"
-#include "iostream"
+#include <iostream>
+#include <time.h>
 
 using namespace std;
 
 class Matrix {
 public:
-    static const int length = 3;
+    static const int length = 5;
     int mat[length][length];
 
     Matrix() {
@@ -17,86 +17,50 @@ public:
         }
     }
 
-    void print(Matrix mat) {
+    void print(Matrix matr) {
         for (int i = 0; i < length; ++i) {
             for (int j = 0; j < length; ++j) {
-                cout << mat.mat[i][j] << endl;
+                cout << matr.mat[i][j] << endl;
             }
         }
     }
 };
 
-int main()
-{
-    int i,j,n=3;
-
-    int **a=new int*[n];
-    for (i=0; i<n; i++)
-    {
-        a[i]=new int[n];
+template<typename T>
+void Logic(T matrA) {
+    int i, j;
+    T matrB;
+    cout << ("Matrix\n");
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++)
+            cout << matrA.mat[i][j] << " ";
+        cout << endl;
     }
-
-    int **b=new int*[n];
-    for (i=0; i<n; i++)
-    {
-        b[i]=new int[n];
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++)
+            matrB.mat[i][j] = matrA.mat[j][i];
     }
-
-
-    printf("Enter elements matrix\n");
-    for (i=0;i<3;i++)
-        for (j=0;j<3;j++)
-        {
-            scanf("%d",&a[i][j]);
-
-        }
-
-    printf("Matrix\n");
-    for (i=0;i<3;i++)
-    {
-        for (j=0;j<3;j++)
-            printf("%d ",a[i][j]);
-        printf("\n");
+    cout << ("Transpore matrix\n");
+    for (i = 0; i < matrB.length; i++) {
+        for (j = 0; j < matrB.length; j++)
+            cout << matrB.mat[i][j] << " ";
+        cout << endl;
     }
-
-    for (i=0;i<3;i++)
-    {
-        for (j=0;j<3;j++)
-            b[i][j]=a[j][i];
-    }
-
-    printf("Transpore massiv\n");
-    for (i=0;i<3;i++)
-    {
-        for (j=0;j<3;j++)
-            printf("%d ",b[i][j]);
-        printf("\n");
-    }
-
-    printf("\n");
-    printf("\n");
-
-
-    for (i=0;i<3;i++)
-    {
-        for (j=0;j<3;j++)
-            printf("%d ",a[i][j]);
-        printf("\n");
-    }
-
-    int flag=0;
-    for (i=0; i<n; i++)
-    {
-        for(j=0; j<n; j++)
-        {
-            if (i!=n  && a[i][j]!=b[i][j])
-                flag=1;
+    int flag = 0;
+    for (i = 0; i < matrA.length; i++) {
+        for (j = 0; j < matrA.length; j++) {
+            if (i != matrA.length && matrA.mat[i][j] != matrB.mat[i][j])
+                flag = 1;
         }
     }
-
-    if (flag==1)
-        printf ("Matrix is not symmetrical");
+    if (flag == 1)
+        cout << ("Matrix is not symmetrical");
     else
-        printf ("Matrix is symmetrical");
-
+        cout << ("Matrix is symmetrical");
 }
+
+int main() {
+    Matrix matr;
+    Logic(matr);
+}
+
