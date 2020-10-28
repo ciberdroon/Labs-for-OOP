@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Matrix {
+class Matrix { //comment
 public:
     static const int length = 3;
     int mat[length][length];
