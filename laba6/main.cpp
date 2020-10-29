@@ -1,12 +1,24 @@
 #include <iostream>
-class Vector {
+
+using namespace std;
+
+class IVector {
 private:
     static const int length = 3;
     int vector[length];
 public:
-    Vector() {
-        for (int i = 0; i < length; i++) {
-            vector[i] = rand() % 100;
+    IVector() {
+        srand(time(NULL));
+        for (int i = 0; i < length; ++i) {
+            if (vector[length] == vector[length] * vector[length])
         }
     }
+  void print (IVector vec){
+      for (int i = 0; i < length; ++i) {
+          cout << vec.vector << endl;
+      }
+    }
 };
+int main () {
+    IVector vec;
+}
