@@ -10,15 +10,20 @@ public:
     IVector() {
         srand(time(NULL));
         for (int i = 0; i < length; ++i) {
-            if (vector[length] == vector[length] * vector[length])
+            if (vector[length] == vector[length] * vector[length]) {
+                vector[length] = rand() % 10 + 10;
+            }
+
         }
     }
-  void print (IVector vec){
-      for (int i = 0; i < length; ++i) {
-          cout << vec.vector << endl;
-      }
+
+    void print(IVector vec) {
+        for (int i = 0; i < length; ++i) {
+            cout << vec.vector [length] << endl;
+        }
     }
 };
-int main () {
+
+int main() {
     IVector vec;
 }
