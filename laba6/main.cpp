@@ -2,62 +2,105 @@
 
 using namespace std;
 
-class IVector {
+class IVector
+{
 private:
     int vector[3];
 public:
-    IVector operator++(int vec) {
-        for (int i = 0; i < 3; ++i) {
-            this->vector[i] = vector[i] * vector[i];
+    IVector()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            this->vector[i] = rand() % 10;
         }
     }
 
-    IVector operator--(int vec) {
-        for (int i = 0; i < 3; ++i) {
-            this->vector[i] = vector[i] - vector[i + 1];
+    IVector operator ++()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            this->vector[i] *= vector[i];
         }
+        return *this;
     }
 
-    IVector operator+(int vec) {
-        for (int i = 0; i < 3; ++i) {
-            this->vector[i]=vector[i] + vector[i];
+    IVector& operator +(IVector &vec1)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            this->vector[i] += vec1.vector[i];
         }
-    }
-    bool operator<(IVector &vec, IVector &vec2){
-        for (int i = 0; i < 3; ++i) {
-
-        }
+        return *this;
     }
 
+    void print()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            cout << vector[i] << " ";
+        }
+        cout << endl;
+    }
+
+    friend bool operator <(IVector &vec1, IVector &vec2);
+
+    friend IVector operator --(IVector &vec);
 };
 
-friend IVector operator--(IVector vec) {
-    for (int i = 0; i < 3; ++i) {
-        this->vector[i] = vector[i] - vector[i + 1];
-    }
+bool operator <(IVector &vec1, IVector &vec2)
+{
+    int maxV1 = vec1.vector[0];
+    int maxV2 = vec2.vector[0];
 
-    bool operator==(MyInt &myInt1, MyInt &myInt2) {
-        return myInt1.value == myInt2.value;
-    }
-
-    MyInt & operator
-    — (
-            MyInt & myInt
-    )
+    for (int i = 0; i < 3; i++)
     {
-        myInt.value -= 3;
-        return
-                myInt;
+        if (vec1.vector[i] > maxV1)
+        {
+            maxV1 = vec1.vector[i];
+        }
     }
 
-    int main() {
-        MyInt myInt(22);
-        cout « !myInt « endl;
-        MyInt
-        myInt2 = —myInt;
-        myInt.print();
-        MyInt myInt1 = myInt + 7;
-        myInt.print();
-        cout « (myInt == myInt2) « endl;
-        return 0;
+    for (int i = 0; i < 3; i++)
+    {
+        if (vec2.vector[i] > maxV2)
+        {
+            maxV2 = vec2.vector[i];
+        }
     }
+    return (maxV1 < maxV2);
+}
+
+IVector operator --(IVector &vec)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        if (i != 2)
+        vec.vector[i] -= vec.vector[i + 1];
+    }
+    return vec;
+}
+
+int main()
+{
+    IVector vector, vector1;
+    cout << "Vector #1: ";
+    vector.print();
+    cout << "Vector #2: ";
+    vector1.print();
+    ++vector1;
+    cout << "++Vector #2: ";
+    vector1.print();
+    --vector;
+    cout << "--Vector #1: ";
+    vector.print();
+    IVector sum = vector1 + vector;
+    cout << "Vector #2 + Vector #1: ";
+    sum.print();
+    cout << "Vector #2 < Vector #1: ";
+    if (vector1 < vector)
+    {
+        cout << "True"<< endl;
+    } else
+        cout << "False" << endl;
+    return 0;
+}
