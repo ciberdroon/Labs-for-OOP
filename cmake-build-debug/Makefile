@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\spiri\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = "C:\Users\Spirit Winner\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.8194.17\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = C:\Users\spiri\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = "C:\Users\Spirit Winner\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.8194.17\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\CLionProjects\Labs_Andrey
+CMAKE_SOURCE_DIR = "D:\2 kypc\OOP\Andrey"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\CLionProjects\Labs_Andrey\cmake-build-debug
+CMAKE_BINARY_DIR = "D:\2 kypc\OOP\Andrey\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = D:\CLionProjects\Labs_Andrey\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\spiri\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	"C:\Users\Spirit Winner\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.8194.17\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\spiri\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Users\Spirit Winner\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.8194.17\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\CLionProjects\Labs_Andrey\cmake-build-debug\CMakeFiles D:\CLionProjects\Labs_Andrey\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 kypc\OOP\Andrey\cmake-build-debug\CMakeFiles" "D:\2 kypc\OOP\Andrey\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\CLionProjects\Labs_Andrey\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\2 kypc\OOP\Andrey\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -143,6 +143,19 @@ lab6/fast:
 .PHONY : lab6/fast
 
 #=============================================================================
+# Target rules for targets named lab8_2
+
+# Build rule for target.
+lab8_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lab8_2
+.PHONY : lab8_2
+
+# fast build rule for target.
+lab8_2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_2.dir\build.make CMakeFiles/lab8_2.dir/build
+.PHONY : lab8_2/fast
+
+#=============================================================================
 # Target rules for targets named lab7
 
 # Build rule for target.
@@ -154,6 +167,73 @@ lab7: cmake_check_build_system
 lab7/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab7.dir\build.make CMakeFiles/lab7.dir/build
 .PHONY : lab7/fast
+
+#=============================================================================
+# Target rules for targets named lab8_1
+
+# Build rule for target.
+lab8_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lab8_1
+.PHONY : lab8_1
+
+# fast build rule for target.
+lab8_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_1.dir\build.make CMakeFiles/lab8_1.dir/build
+.PHONY : lab8_1/fast
+
+Lab8/Task1/main.obj: Lab8/Task1/main.cpp.obj
+
+.PHONY : Lab8/Task1/main.obj
+
+# target to build an object file
+Lab8/Task1/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_1.dir\build.make CMakeFiles/lab8_1.dir/Lab8/Task1/main.cpp.obj
+.PHONY : Lab8/Task1/main.cpp.obj
+
+Lab8/Task1/main.i: Lab8/Task1/main.cpp.i
+
+.PHONY : Lab8/Task1/main.i
+
+# target to preprocess a source file
+Lab8/Task1/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_1.dir\build.make CMakeFiles/lab8_1.dir/Lab8/Task1/main.cpp.i
+.PHONY : Lab8/Task1/main.cpp.i
+
+Lab8/Task1/main.s: Lab8/Task1/main.cpp.s
+
+.PHONY : Lab8/Task1/main.s
+
+# target to generate assembly for a file
+Lab8/Task1/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_1.dir\build.make CMakeFiles/lab8_1.dir/Lab8/Task1/main.cpp.s
+.PHONY : Lab8/Task1/main.cpp.s
+
+Lab8/Task2/main.obj: Lab8/Task2/main.cpp.obj
+
+.PHONY : Lab8/Task2/main.obj
+
+# target to build an object file
+Lab8/Task2/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_2.dir\build.make CMakeFiles/lab8_2.dir/Lab8/Task2/main.cpp.obj
+.PHONY : Lab8/Task2/main.cpp.obj
+
+Lab8/Task2/main.i: Lab8/Task2/main.cpp.i
+
+.PHONY : Lab8/Task2/main.i
+
+# target to preprocess a source file
+Lab8/Task2/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_2.dir\build.make CMakeFiles/lab8_2.dir/Lab8/Task2/main.cpp.i
+.PHONY : Lab8/Task2/main.cpp.i
+
+Lab8/Task2/main.s: Lab8/Task2/main.cpp.s
+
+.PHONY : Lab8/Task2/main.s
+
+# target to generate assembly for a file
+Lab8/Task2/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab8_2.dir\build.make CMakeFiles/lab8_2.dir/Lab8/Task2/main.cpp.s
+.PHONY : Lab8/Task2/main.cpp.s
 
 Laba7/main.obj: Laba7/main.cpp.obj
 
@@ -219,6 +299,14 @@ help:
 	@echo ... rebuild_cache
 	@echo ... lab6
 	@echo ... lab7
+	@echo ... lab8_1
+	@echo ... lab8_2
+	@echo ... Lab8/Task1/main.obj
+	@echo ... Lab8/Task1/main.i
+	@echo ... Lab8/Task1/main.s
+	@echo ... Lab8/Task2/main.obj
+	@echo ... Lab8/Task2/main.i
+	@echo ... Lab8/Task2/main.s
 	@echo ... Laba7/main.obj
 	@echo ... Laba7/main.i
 	@echo ... Laba7/main.s
